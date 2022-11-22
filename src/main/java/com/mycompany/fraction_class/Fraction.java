@@ -5,8 +5,7 @@ public class Fraction
     private int ch;
     private int zn;
     
-    static private boolean ReductionFlag = true;
-    
+    static private boolean ReductionFlag = true;   
     static private int countObj = 0;
     
     Fraction()
