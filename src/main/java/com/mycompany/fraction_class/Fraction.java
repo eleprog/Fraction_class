@@ -133,7 +133,7 @@ public class Fraction implements Cloneable
         this.zn /= nod;
     }
     
-    boolean isEqual(Fraction objF)
+    boolean equals(Fraction objF)
     {
         if(objF == null)
             return false;
