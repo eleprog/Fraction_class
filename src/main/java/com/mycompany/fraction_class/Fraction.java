@@ -1,6 +1,6 @@
 package com.mycompany.fraction_class;
 
-public class Fraction 
+public class Fraction implements Cloneable
 {
     private int ch;
     private int zn;
@@ -150,7 +150,8 @@ public class Fraction
         return countObj;
     }
     
-    void CopyFraction(Fraction obj)
+    //void CopyFraction(Fraction obj)
+    void clone(Fraction obj)   
     {
         if(obj == null)
         {
