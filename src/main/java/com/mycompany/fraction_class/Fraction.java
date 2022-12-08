@@ -133,13 +133,13 @@ public class Fraction implements Cloneable
         this.zn /= nod;
     }
     
-    boolean equals(Fraction objF)
+    @Override
+    public boolean equals(Object obj)
     {
-        if(objF == null)
+        if(!(obj instanceof Fraction))
             return false;
-        if(ch == objF.ch && zn == objF.zn)
-            return true;
-        return false;
+        
+        return ch == ((Fraction)obj).ch && zn == ((Fraction)obj).zn;
     }
     
     String toFormatString(){       
