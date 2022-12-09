@@ -142,7 +142,8 @@ public class Fraction implements Cloneable
         return ch == ((Fraction)obj).ch && zn == ((Fraction)obj).zn;
     }
     
-    String toFormatString(){       
+    @Override
+    public String toString(){
         return ch+"/"+zn;    
     }
     
