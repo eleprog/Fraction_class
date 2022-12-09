@@ -3,28 +3,21 @@ package com.mycompany.fraction_class;
 import java.util.ArrayList;
         
 public class Fraction_class 
-{
-    public static void deleteEqualFraction(ArrayList<Fraction> listFraction)
-    {
-        int len = listFraction.size();
-        for(int i = 0; i < len; i++)
-        {
-            Fraction tmp = listFraction.get(i);
-            if(tmp != null && i != listFraction.lastIndexOf(tmp));
-            {
-                int index = listFraction.lastIndexOf(tmp);
-                while(index != -1)
-                {
-                    listFraction.remove(index);
-                    index = listFraction.lastIndexOf(tmp);
-                }
+{   
+    public static <T> void deleteEqualObject(ArrayList<T> listFraction) {
+        for(int i = 0; i < listFraction.size(); i++) {
+            T tmp = listFraction.get(i);
+            int index = listFraction.lastIndexOf(tmp);
+            
+            if(i != index) {
+                i--;
+                for(;index != -1; index = listFraction.lastIndexOf(tmp))
+                    listFraction.remove(index);   
             }
-            len = listFraction.size();
         }                   
     }
     
-    public static Fraction createRandomFraction(int rangeLo, int rangeHi)
-    {
+    public static Fraction createRandomFraction(int rangeLo, int rangeHi) {
         int ch = rangeLo + (int)(Math.random() * (rangeHi - rangeLo));
         int zn = rangeLo + (int)(Math.random() * (rangeHi - rangeLo));
         return new Fraction(ch, zn);
@@ -39,15 +32,21 @@ public class Fraction_class
              
         for(int i = 0; i < len; i++)
             listFraction.add(createRandomFraction(lo, hi));
-            
-        for(Fraction tmp : listFraction)
-            System.out.print(tmp.toFormatString() + " ");
+               
+        /*listFraction.add(new Fraction(1,1));
+        listFraction.add(new Fraction(2,1));
+        listFraction.add(new Fraction(3,1));
+        listFraction.add(new Fraction(4,1));
+        listFraction.add(new Fraction(5,1));
+        listFraction.add(new Fraction(6,1));
+        listFraction.add(new Fraction(7,1));
+        listFraction.add(new Fraction(2,1));
+        listFraction.add(new Fraction(1,1));*/
         
-        deleteEqualFraction(listFraction);
-        System.out.println();
+        System.out.print(listFraction + "\n");
         
-        for(Fraction tmp : listFraction)
-            System.out.print(tmp.toFormatString()+ " ");
-        
+        deleteEqualObject(listFraction);
+    
+        System.out.print(listFraction);
     }
 }
