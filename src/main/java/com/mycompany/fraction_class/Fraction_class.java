@@ -2,7 +2,7 @@ package com.mycompany.fraction_class;
 
 import java.util.ArrayList;
         
-public class Fraction_class 
+public class Fraction_class
 {   
     public static <T> void deleteEqualObject(ArrayList<T> listFraction) {
         for(int i = 0; i < listFraction.size(); i++) {
@@ -28,7 +28,7 @@ public class Fraction_class
         ArrayList<Fraction> listFraction = new ArrayList<>();
         int hi = 10;
         int lo = 5;
-        int len = 30;
+        int len = 20;
              
         for(int i = 0; i < len; i++)
             listFraction.add(createRandomFraction(lo, hi));
