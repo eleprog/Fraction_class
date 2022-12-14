@@ -11,8 +11,8 @@ public class Fraction_class
             
             if(i != index) {
                 i--;
-                for(;index != -1; index = listFraction.lastIndexOf(tmp))
-                    listFraction.remove(index);   
+                while((index = listFraction.lastIndexOf(tmp)) != -1)
+                    listFraction.remove(index);
             }
         }                   
     }
@@ -23,13 +23,13 @@ public class Fraction_class
         return new Fraction(ch, zn);
     }
     
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         ArrayList<Fraction> listFraction = new ArrayList<>();
         int hi = 10;
         int lo = 5;
         int len = 20;
-             
+        
         for(int i = 0; i < len; i++)
             listFraction.add(createRandomFraction(lo, hi));
                
