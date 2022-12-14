@@ -1,10 +1,11 @@
 package com.mycompany.fraction_class;
 
 import java.util.ArrayList;
+import java.util.List;
         
 public class Fraction_class
 {   
-    public static <T> void deleteEqualObject(ArrayList<T> listFraction) {
+    public static <T> void deleteEqualObject(List<T> listFraction) {
         for(int i = 0; i < listFraction.size(); i++) {
             T tmp = listFraction.get(i);
             int index = listFraction.lastIndexOf(tmp);
@@ -25,7 +26,7 @@ public class Fraction_class
     
     public static void main(String[] args)
     {
-        ArrayList<Fraction> listFraction = new ArrayList<>();
+        List<Fraction> listFraction = new ArrayList<>();
         int hi = 10;
         int lo = 5;
         int len = 20;
