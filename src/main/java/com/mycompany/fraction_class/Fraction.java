@@ -1,6 +1,6 @@
 package com.mycompany.fraction_class;
 
-public class Fraction implements Cloneable
+public class Fraction implements Cloneable, Comparable
 {
     private int ch;
     private int zn;
@@ -112,8 +112,7 @@ public class Fraction implements Cloneable
         if(a < 0) a = -a;
         if(b < 0) b = -b;
         
-        if(a > b)
-        {
+        if(a > b) {
             int tmp = a;
             a = b;
             b = tmp;
@@ -137,9 +136,7 @@ public class Fraction implements Cloneable
     {
         if(objF == null)
             return false;
-        if(ch == objF.ch && zn == objF.zn)
-            return true;
-        return false;
+        return ch == objF.ch && zn == objF.zn;
     }
     
     String toFormatString(){       
@@ -149,10 +146,8 @@ public class Fraction implements Cloneable
     public static int getCountObject(){
         return countObj;
     }
-    
-    //void CopyFraction(Fraction obj)
-    void clone(Fraction obj)   
-    {
+
+    void clone(Fraction obj) {
         if(obj == null)
         {
             ch = 0;
@@ -161,5 +156,17 @@ public class Fraction implements Cloneable
         }
         ch = obj.ch;
         zn = obj.zn;
+    }
+
+    @Override
+    public int compareTo(Object obj) {
+        Fraction compValue;
+
+        if(obj instanceof Fraction)
+            compValue = (Fraction)obj;
+        else
+            compValue = new Fraction();
+
+        return this.ch * compValue.zn - compValue.ch * this.zn;
     }
 }
